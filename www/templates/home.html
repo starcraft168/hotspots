@@ -1,0 +1,69 @@
+<ion-view title="Trending Photos">
+  <ion-nav-bar class="bar-stable">
+  </ion-nav-bar>
+
+    <ion-content padding="'true'" class="has-header">
+      <!-- pull to refresh-->
+      <ion-refresher
+          pulling-text="Pull to refresh..."
+          on-refresh="doRefresh()">
+      </ion-refresher>
+
+      <!-- <form>
+        <button class='button' ng-click='showTrending()'>
+          Trending
+        </button>
+      </form> -->
+
+        <!--Search bar-->
+        <form class="bar bar-header item-input-inset ">
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios7-search placeholder-icon"></i>
+                <input type="search" placeholder="Search" ng-model-options="{debounce: 1000}" ng-model="search.input">
+            </label>
+            <button class="button button-clear" ng-click="searchCanel()">
+                Cancel
+            </button>
+        </form>
+
+        <!-- Cards Container Start-->
+        <div class="list card mdl-shadow--3dp repeat-items-transition" ng-repeat="post in posts.posts | orderBy: -upvotes | filter: { hashtag: search.input}">
+          <div class="item item-image">
+            <img ng-src="{{post.imageURI}}">
+          </div>
+
+
+          <!-- Card Start-->
+          <div class="item item-body">
+            <!-- <img class="full-image" ng-src="{{post.imageURI}}"> -->
+            <p> {{post.caption}} </p>
+            <p>
+              <a href="#" class="subdued">{{post.upvotes}} Upvotes</a>
+              <a href="#/posts/{{post._id}}/comments" class="subdued">{{post.comments.length}} Comments</a>
+            </p>
+          </div>
+
+          <div class="item tabs tabs-secondary tabs-icon-left">
+            <a class="tab-item" href="#" ng-click="upvotePost(post)" >
+              <i class="icon ion-thumbsup custom-icon"></i> Upvotes
+            </a>
+            <a class="tab-item" href="#/posts/{{post._id}}/comments">
+              <i class="icon ion-chatbox custom-icon"></i> Comment
+            </a>
+            <a class="tab-item" href="#" ng-click="report(post)">
+              <i class="icon ion-alert custom-icon"></i> Report
+            </a>
+          </div>
+          <!-- Card End -->
+        </div>
+        <!-- Card Container End-->
+
+
+        <!--Infinite Scroll -->
+         <ion-infinite-scroll
+           ng-if="moreDataCanBeLoaded > 0"
+           on-infinite="loadMorePosts()"
+           distance="1%"> <!-- start loading earlier -->
+         </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,33 @@
+<ion-view title="Comments">
+
+  <ion-nav-bar class="bar-stable">
+    <ion-nav-back-button class="button-icon icon ion-ios-arrow-back">
+      Back
+    </ion-nav-back-button>
+  </ion-nav-bar>
+
+  <ion-content padding='true' class="has-header">
+
+    <div class="item item-image">
+      <img ng-src="{{post.imageURI}}">
+    </div>
+
+    <ion-list class="mdl-shadow--3dp repeat-items-transition" ng-repeat="comment in post.comments track by $index">
+      <ion-item menu-close="">
+        {{comment}}
+      </ion-item>
+    </ion-list>
+
+    <!-- input field to comments-->
+    <label class="item item-input" name="photo-comment">
+      <form class="comment-form" ng-submit="addComment(comment._id, comment)">
+        <input type="text" placeholder="comment" ng-model="comment.input">
+        <!-- <ion-footer-bar> -->
+        <button type="submit" class="button button-full mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Comment</button>
+        <!-- </ion-footer-bar> -->
+      </form>
+    </label>
+
+
+  </ion-content>
+</ion-view>

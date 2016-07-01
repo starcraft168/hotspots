@@ -1,0 +1,46 @@
+{
+  "name": "hotSpot",
+  "app_id": "60f5f13b",
+  "proxies": [
+    {
+      "path": "/posts",
+      "proxyUrl": "http://gentle-spire-1503.herokuapp.com/posts"
+    },
+    {
+      "path": "/addPost",
+      "proxyUrl": "http://gentle-spire-1503.herokuapp.com/addPost"
+    },
+    {
+      "path": "/posts/:id/comments",
+      "proxyUrl": "http://gentle-spire-1503.herokuapp.com/posts/:id/comments"
+    },
+    {
+      "path": "/posts/:id/downvote",
+      "proxyUrl": "http://gentle-spire-1503.herokuapp.com/posts/:id/downvote"
+    },
+    {
+      "path": "/posts/:id/upvote",
+      "proxyUrl": "http://gentle-spire-1503.herokuapp.com/posts/:id/upvote"
+    },
+    {
+      "path": "/posts/:id/removePost",
+      "proxyUrl": "http://gentle-spire-1503.herokuapp.com/posts/:id/removePost"
+    },
+    {
+      "path": "/posts/:id/report",
+      "proxyUrl": "http://gentle-spire-1503.herokuapp.com/posts/:id/report"
+    },
+    {
+      "path": "/posts/:id",
+      "proxyUrl": "http://gentle-spire-1503.herokuapp.com/posts/:id"
+    },
+    {
+      "path": "/nextposts",
+      "proxyUrl": "http://gentle-spire-1503.herokuapp.com/nextposts"
+    },
+    {
+      "path": "/postscount",
+      "proxyUrl": "http://gentle-spire-1503.herokuapp.com/postscount"
+    }
+  ]
+}

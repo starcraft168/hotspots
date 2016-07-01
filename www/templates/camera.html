@@ -1,0 +1,39 @@
+<!-- Dummy Camera view, will be removed in the future - simply using for emulation purposes -->
+<ion-view title="Camera">
+  <ion-nav-bar class="bar-stable">
+  </ion-nav-bar>
+  
+  <ion-content padding="'true'" style="" class="has-header">
+
+    <div class="item item-image">
+      <img ng-show="userPost.imageURI !== undefined" ng-src="{{userPost.imageURI}}" style="text-align: center">
+    </div>
+
+    <!-- TODO: fix filters, they are partially working. Error occurs upon submitting the photo after it has been modified with filter -->
+    <!-- <div class="button-bar">
+
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"ng-click="addSepiaFilter()">sepia</button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"ng-click="addInvertFilter()">invert</button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"ng-click="addSaturateFilter()">strong</button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"ng-click="clearFilter()">none</a>
+    </div> -->
+
+
+    <label class="item item-input" name="photo-comment">
+      <form ng-submit="addPost()">
+        <input type="text" placeholder="photo caption" ng-model="userPost.caption">
+      </form>
+    </label>
+
+
+    <button type="submit"
+     class="button button-full mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+     ng-click="addPost()">
+      Post Picture
+    </button>
+
+
+
+
+  </ion-content>
+</ion-view>

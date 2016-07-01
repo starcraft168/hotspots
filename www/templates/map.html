@@ -1,0 +1,18 @@
+<ion-view title="Photos Near You">
+
+  <ion-nav-bar class="bar-stable">
+  </ion-nav-bar>
+    <ion-content padding="'true'" class="has-header">
+
+        <div id="map" data-tap-disabled="true" class="mdl-shadow--3dp"></div>
+
+        <form class="list">
+            <ion-item class="range range-dark" class="mdl-shadow--3dp">
+              <i class="icon ion-ios-minus-empty"></i>
+                <input id="radius" type="range" value="{{radius.value}}" step ="1609.34" min="{{radius.min}}" max="{{radius.max}}" ng-model="radius.value" >
+              <i class="icon ion-ios-plus-empty"></i>
+            </ion-item>
+        </form>
+
+    </ion-content>
+</ion-view>
